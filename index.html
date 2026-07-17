@@ -366,9 +366,6 @@ function resSubmit(){
   var fd=new FormData();
   fd.append('data',payload);
   fetch(SHEET,{method:'POST',mode:'no-cors',body:fd}).catch(function(){});
-  // Also try image beacon as fallback
-  var img=new Image();
-  img.src=SHEET+'?data='+encodeURIComponent(payload);
   document.getElementById('res-sub').textContent='✓ Thank you! We will be in touch.';
   document.getElementById('res-sub').classList.add('dim');
 }
